@@ -1,0 +1,32 @@
+{
+  "name": "react-tree-utils",
+  "version": "0.0.1",
+  "description": "utilities to map DOM element, ReactDOMComponent, ReactCompositeComponent and ReactElement to each other ",
+  "main": "./lib/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/recotj/react-tree-utils.git"
+  },
+  "keywords": [
+    "react",
+    "tree",
+    "utils"
+  ],
+  "author": "reco",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/recotj/react-tree-utils/issues"
+  },
+  "homepage": "https://github.com/recotj/react-tree-utils#readme",
+  "dependencies": {
+    "react": "^15.0.2",
+    "react-dom": "^15.0.2"
+  },
+  "devDependencies": {
+    "gulp-workflow": "git+https://github.com/recotj/gulp-workflow.git",
+    "run-sequence": "^1.1.5"
+  }
+}
