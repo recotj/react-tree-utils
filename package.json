@@ -4,7 +4,7 @@
   "description": "utilities to map DOM element, ReactDOMComponent, ReactCompositeComponent and ReactElement to each other ",
   "main": "./lib/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "postinstall": "scripts/postinstall.sh;"
   },
   "repository": {
     "type": "git",

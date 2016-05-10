@@ -14,12 +14,27 @@ module.exports.recordOwner = (component, owner) => {
 	const element = ReactDOM.findDOMNode(component) || component;
 	if (!(element instanceof HTMLElement)) return;
 
-	const Klass = owner.constructor;
-	if (typeof Klass !== 'function') return;
+	const ReactClass = owner.constructor;
+	if (typeof ReactClass !== 'function') return;
 
-	const internalKey = Klass[INTERNAL_KEY] || (Klass[INTERNAL_KEY] = generateInternalKey());
+	const internalKey = ReactClass[INTERNAL_KEY] || (ReactClass[INTERNAL_KEY] = generateInternalKey());
 	const owners = element[OWNERS] || (element[OWNERS] = {});
 	owners[internalKey] = owner;
+};
+
+module.exports.unrecordOwner = (component, owner) => {
+	if (!component) return;
+
+	owner = owner || component['_owner'];
+	if (!owner) return;
+
+	const element = ReactDOM.findDOMNode(component) || component;
+	if (!(element instanceof HTMLElement)) return;
+
+	const ReactClass = owner.constructor;
+	if (typeof ReactClass !== 'function') return;
+
+	Reflect.deleteProperty(element, ReactClass[INTERNAL_KEY]);
 };
 
 module.exports.getOwner = (component, ownerType) => {
