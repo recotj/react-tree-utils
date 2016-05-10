@@ -1,10 +1,13 @@
-const { recordOwner, getOwner } = require('./ReactOwnerUtil');
 const getNativeComponentFromNode = require('./getNativeComponentFromNode');
 const getClosestReactElementFromNode = require('./getClosestReactElementFromNode');
+const getOwnerComponentFromNode = require('./getOwnerComponentFromNode');
+const recordOwnerComponentForNode = require('./recordOwnerComponentForNode');
+const unsetOwnerComponentRecordForNode = require('./unsetOwnerComponentRecordForNode');
 
 module.exports = {
-	recordOwner,
-	getOwner,
 	getNativeComponentFromNode,
-	getClosestReactElementFromNode
+	getClosestReactElementFromNode,
+	getOwnerComponentFromNode,
+	recordOwnerComponentForNode,
+	unsetOwnerComponentRecordForNode
 };
